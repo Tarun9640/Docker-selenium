@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  selenium-chrome:
+    image: selenium/standalone-chrome
+    container_name: selenium-chrome-2
+    ports:
+      - "4444:4444"  # Maps Selenium Grid port
+      - "5900:5900"  # Optional: Maps VNC port for debugging
+    environment:
+      - SE_NODE_MAX_SESSIONS=12 # Maximum concurrent sessions
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true  # Allow overriding session limit
+    
