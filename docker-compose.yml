@@ -10,4 +10,5 @@ services:
     environment:
       - SE_NODE_MAX_SESSIONS=12 # Maximum concurrent sessions
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true  # Allow overriding session limit
+    restart : unless-stopped
     
