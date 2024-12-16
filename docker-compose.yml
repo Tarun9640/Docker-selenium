@@ -10,5 +10,9 @@ services:
     environment:
       - SE_NODE_MAX_SESSIONS=12 # Maximum concurrent sessions
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true  # Allow overriding session limit
-    restart : unless-stopped
+      - SE_OPTS=--config /opt/selenium/config.json  # Load custom capabilities
+    volumes:
+      - ./config.json:/opt/selenium/config.json  # Mount your custom configuration file
+    restart: unless-stopped
+
     
